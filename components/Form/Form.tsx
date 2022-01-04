@@ -109,7 +109,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
         >
           Liquid Oxygen
         </a>{' '}
-        used in combination with React, Typescript and Tailwind CSS.
+        used in combination with Next, Typescript and Tailwind CSS.
       </LdTypo>
       <LdTypo className="mb-ld-24">
         Let&apos;s change the theme of the app first:
