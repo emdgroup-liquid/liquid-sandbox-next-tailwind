@@ -37,4 +37,4 @@ yarn-error.log*
 *.tsbuildinfo
 
 # liquid assets
-public/assets
+public/liquid/assets

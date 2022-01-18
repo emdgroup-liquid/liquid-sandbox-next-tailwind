@@ -10,7 +10,7 @@ module.exports = withTM({
         patterns: [
           {
             from: 'node_modules/@emdgroup-liquid/liquid/dist/liquid/assets',
-            to: path.join(__dirname, 'public/assets'),
+            to: path.join(__dirname, 'public/liquid/assets'),
           },
         ],
       })
