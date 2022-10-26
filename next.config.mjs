@@ -5,7 +5,7 @@ import CopyWebpackPlugin from 'copy-webpack-plugin'
  * @type {import('next').NextConfig}
  */
 const nextConfig = {
-  webpack(config, { dev }) {
+  webpack: (config, { dev }) => {
     config.plugins.push(
       new CopyWebpackPlugin({
         patterns: [
