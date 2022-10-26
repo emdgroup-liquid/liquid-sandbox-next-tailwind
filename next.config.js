@@ -4,6 +4,7 @@ const CopyWebpackPlugin = require('copy-webpack-plugin')
 const withTM = require('next-transpile-modules')(['@emdgroup-liquid/liquid'])
 
 module.exports = withTM({
+  experimental: { esmExternals: true },
   webpack(config, { dev }) {
     config.plugins.push(
       new CopyWebpackPlugin({

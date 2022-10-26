@@ -1,14 +1,12 @@
-import * as React from 'react'
-import type { NextPage } from 'next'
-
+import Footer from '../components/Footer/Footer'
+import Form from '../components/Form/Form'
 import {
   LdBgCells,
   LdNotification,
   LdTypo,
 } from '@emdgroup-liquid/liquid/dist/react'
-
-import Footer from '../components/Footer/Footer'
-import Form from '../components/Form/Form'
+import type { NextPage } from 'next'
+import * as React from 'react'
 
 const successMessages = [
   'Nice! 👍',
