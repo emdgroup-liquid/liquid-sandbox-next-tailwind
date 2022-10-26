@@ -1,14 +1,17 @@
-const path = require('path')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
+import { join } from 'path'
+import CopyWebpackPlugin from 'copy-webpack-plugin'
 
-module.exports = {
+/**
+ * @type {import('next').NextConfig}
+ */
+const nextConfig = {
   webpack(config, { dev }) {
     config.plugins.push(
       new CopyWebpackPlugin({
         patterns: [
           {
             from: 'node_modules/@emdgroup-liquid/liquid/dist/liquid/assets',
-            to: path.join(__dirname, 'public/liquid/assets'),
+            to: join(process.cwd(), 'public/liquid/assets'),
           },
         ],
       })
@@ -16,3 +19,5 @@ module.exports = {
     return config
   },
 }
+
+export default nextConfig
