@@ -9,7 +9,7 @@
     "postinstall": "cp -r ./node_modules/@emdgroup-liquid/liquid/dist/liquid/assets ./public/liquid"
   },
   "dependencies": {
-    "@emdgroup-liquid/liquid": "^4.0.1",
+    "@emdgroup-liquid/liquid": "^4.2.0",
     "next": "^13.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
