@@ -5,8 +5,7 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next build && next start",
-    "lint": "next lint",
-    "postinstall": "cp -r ./node_modules/@emdgroup-liquid/liquid/dist/liquid/assets ./public/liquid"
+    "lint": "next lint"
   },
   "dependencies": {
     "@emdgroup-liquid/liquid": "^4.2.0",
