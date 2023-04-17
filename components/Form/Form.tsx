@@ -190,7 +190,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
                 shouldDirty: true,
               })
             }}
-            invalid={errors.name}
+            invalid={!!errors.name}
           />
           <LdInputMessage
             className={
@@ -227,7 +227,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
                 shouldDirty: true,
               })
             }}
-            invalid={errors.email}
+            invalid={!!errors.email}
           />
           <LdInputMessage
             className={
@@ -266,7 +266,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
                 shouldDirty: true,
               })
             }}
-            invalid={errors.website}
+            invalid={!!errors.website}
           />
           <LdInputMessage
             className={
@@ -301,7 +301,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
           </span>
           <LdCheckbox
             tone="dark"
-            invalid={errors.termsAccepted}
+            invalid={!!errors.termsAccepted}
             {...register('termsAccepted', {
               required: true,
             })}
