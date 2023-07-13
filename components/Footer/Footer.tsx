@@ -1,4 +1,7 @@
-import { LdIcon, LdTypo } from '@emdgroup-liquid/liquid/dist/react'
+import {
+  LdIcon,
+  LdTypo,
+} from '@emdgroup-liquid/liquid/dist/react-define-excluded'
 
 const Footer: React.FC = () => (
   <footer className="relative flex-grow bg-thm-primary-active">

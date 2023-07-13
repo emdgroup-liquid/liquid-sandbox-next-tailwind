@@ -1,5 +1,10 @@
 import '@emdgroup-liquid/liquid/dist/css/liquid.global.css'
+import { type NextComponentType } from 'next'
 import type { AppProps } from 'next/app'
+import {
+  type AppContextType,
+  type AppPropsType,
+} from 'next/dist/shared/lib/utils'
 import { useEffect } from 'react'
 import 'tailwindcss/tailwind.css'
 
@@ -14,7 +19,11 @@ import 'tailwindcss/tailwind.css'
   }
 })()
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp: NextComponentType<
+  AppContextType,
+  object,
+  AppPropsType<any, object>
+> = ({ Component, pageProps }) => {
   return <Component {...pageProps} />
 }
 

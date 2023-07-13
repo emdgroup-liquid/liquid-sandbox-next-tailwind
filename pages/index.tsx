@@ -4,7 +4,7 @@ import {
   LdBgCells,
   LdNotification,
   LdTypo,
-} from '@emdgroup-liquid/liquid/dist/react'
+} from '@emdgroup-liquid/liquid/dist/react-define-excluded'
 import type { NextPage } from 'next'
 import * as React from 'react'
 

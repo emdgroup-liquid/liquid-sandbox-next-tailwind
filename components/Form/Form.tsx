@@ -9,7 +9,7 @@ import {
   LdSelect,
   LdTooltip,
   LdTypo,
-} from '@emdgroup-liquid/liquid/dist/react'
+} from '@emdgroup-liquid/liquid/dist/react-define-excluded'
 import * as React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { useForm } from 'react-hook-form'
