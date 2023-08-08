@@ -14,7 +14,7 @@ import * as React from 'react'
 import ReactDOMServer from 'react-dom/server'
 import { useForm } from 'react-hook-form'
 
-type FormProps = {
+interface FormProps {
   onChangeTheme: (theme: string) => void
 }
 
@@ -38,7 +38,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
 
   const handleCancel = React.useCallback<
     React.MouseEventHandler<HTMLLdButtonElement>
-  >((event) => {
+  >(() => {
     dispatchEvent(new CustomEvent('ldNotificationClear'))
     dispatchEvent(
       new CustomEvent('ldNotificationAdd', {
@@ -89,17 +89,22 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
     )
   }, [])
 
+  const handleTryFormSubmit = handleSubmit(
+    handleFormSubmit,
+    handleFormInvalid
+  ) as () => void
+
   return (
     <form
       autoComplete="off"
       className="bg-wht rounded-l shadow-hover p-ld-32"
-      onSubmit={handleSubmit(handleFormSubmit, handleFormInvalid)}
+      onSubmit={handleTryFormSubmit}
     >
       <LdTypo className="mb-ld-32" variant="h2">
         Hi there 👋
       </LdTypo>
 
-      <LdTypo className="mb-ld-16">
+      <p className="mb-ld-16 typo-body-m">
         This small sandbox app demonstrates{' '}
         <a
           className="font-bold hover:underline"
@@ -110,7 +115,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
           Liquid Oxygen
         </a>{' '}
         used in combination with Next, Typescript and Tailwind CSS.
-      </LdTypo>
+      </p>
       <LdTypo className="mb-ld-24">
         Let&apos;s change the theme of the app first:
       </LdTypo>
@@ -118,7 +123,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
       <LdLabel className="mb-ld-32 w-full">
         App Theme
         <LdSelect
-          onLdchange={(ev: CustomEvent) => {
+          onLdchange={(ev) => {
             setTheme(ev.detail[0])
             onChangeTheme(ev.detail[0])
           }}
@@ -148,7 +153,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
             </LdTooltip>
           </span>
           <LdSelect
-            onLdchange={(ev: CustomEvent) => {
+            onLdchange={(ev) => {
               setTitle(ev.detail[0])
             }}
             placeholder="No title"
@@ -181,7 +186,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
             })}
             onInput={(ev) => {
               setValue('name', (ev.target as HTMLLdInputElement).value, {
-                shouldValidate: isFormDirty || dirtyFields.name,
+                shouldValidate: isFormDirty ?? dirtyFields.name,
               })
             }}
             onBlur={(ev) => {
@@ -194,7 +199,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
           />
           <LdInputMessage
             className={
-              errors.name || getValues('name') ? 'visible' : 'invisible'
+              errors.name ?? getValues('name') ? 'visible' : 'invisible'
             }
             mode={errors.name ? 'error' : 'valid'}
           >
@@ -218,7 +223,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
             })}
             onInput={(ev) => {
               setValue('email', (ev.target as HTMLLdInputElement).value, {
-                shouldValidate: isFormDirty || dirtyFields.email,
+                shouldValidate: isFormDirty ?? dirtyFields.email,
               })
             }}
             onBlur={(ev) => {
@@ -231,7 +236,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
           />
           <LdInputMessage
             className={
-              errors.email || getValues('email') ? 'visible' : 'invisible'
+              errors.email ?? getValues('email') ? 'visible' : 'invisible'
             }
             mode={errors.email ? 'error' : 'valid'}
           >
@@ -257,7 +262,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
             })}
             onInput={(ev) => {
               setValue('website', (ev.target as HTMLLdInputElement).value, {
-                shouldValidate: isFormDirty || dirtyFields.website,
+                shouldValidate: isFormDirty ?? dirtyFields.website,
               })
             }}
             onBlur={(ev) => {
@@ -270,7 +275,7 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
           />
           <LdInputMessage
             className={
-              errors.website || getValues('website') ? 'visible' : 'invisible'
+              errors.website ?? getValues('website') ? 'visible' : 'invisible'
             }
             mode={errors.website ? 'error' : 'valid'}
           >
