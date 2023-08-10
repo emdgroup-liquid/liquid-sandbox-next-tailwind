@@ -1,12 +1,11 @@
-import {
-  LdIcon,
-  LdTypo,
-} from '@emdgroup-liquid/liquid/dist/react-define-excluded'
+// This is a React Server Component.
+// We use Liquid Oxygen Web Components without React bindings here.
+// See https://liquid.merck.design/liquid/guides/server-side-rendering/#react-server-components
 
 const Footer: React.FC = () => (
   <footer className="relative flex-grow bg-thm-primary-active">
     <div className="container text-center mx-auto px-ld-24 pt-20 pb-24 max-w-2xl flex flex-col items-center justify-center">
-      <LdTypo className="text-wht mb-ld-12">
+      <ld-typo class="text-wht mb-ld-12">
         Checkout the source code on
         <a
           href="https://github.com/emdgroup-liquid/liquid-sandbox-react-tailwind"
@@ -28,16 +27,16 @@ const Footer: React.FC = () => (
             />
           </svg>
         </a>
-      </LdTypo>
-      <LdTypo className="text-wht opacity-60">
+      </ld-typo>
+      <ld-typo class="text-wht opacity-60">
         Made with{' '}
-        <LdIcon
+        <ld-icon
           name="tea-pot"
           aria-label="lots of tea"
-          className="transform translate-y-ld-4"
+          class="transform translate-y-ld-4"
         />{' '}
         by the UX Strategy &amp; Design Team at EMD Digital
-      </LdTypo>
+      </ld-typo>
     </div>
   </footer>
 )

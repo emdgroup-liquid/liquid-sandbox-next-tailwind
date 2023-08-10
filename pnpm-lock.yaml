@@ -2,8 +2,8 @@ lockfileVersion: '6.0'
 
 dependencies:
   '@emdgroup-liquid/liquid':
-    specifier: ^5.6.4
-    version: 5.6.4(react-dom@18.2.0)(react@18.2.0)
+    specifier: ^5.11.1
+    version: 5.11.1(react-dom@18.2.0)(react@18.2.0)
   next:
     specifier: ^13.4.13
     version: 13.4.13(@babel/core@7.17.8)(react-dom@18.2.0)(react@18.2.0)
@@ -322,8 +322,8 @@ packages:
       '@jridgewell/trace-mapping': 0.3.9
     dev: true
 
-  /@emdgroup-liquid/liquid@5.6.4(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-l+NQpLHltqZ4U0wQMR4uM6b8v+oZ/ONcJ+aIgQpc2T90cfn5m0eZx7mZZ7IWgDPSoSKh4AS7/XowzyBFvhbQWw==}
+  /@emdgroup-liquid/liquid@5.11.1(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-i+FF8toX5lfCZoCASY/uhItOEhaELeI9nDR2SXdIel2XkcQFY/O+2PT1Ct16Rtc1clj1ZjuCgHjJEBc0aARXOQ==}
     engines: {node: '>=14.16.1', yarn: '>=1.22.10'}
     hasBin: true
     peerDependencies:

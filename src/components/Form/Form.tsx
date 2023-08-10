@@ -1,3 +1,9 @@
+'use client'
+
+// This is a client side React component.
+// We use Liquid Oxygen Web Components with React bindings here.
+// See https://liquid.merck.design/liquid/guides/server-side-rendering/#react-server-components
+
 import { titles } from './titles'
 import {
   LdButton,
@@ -169,7 +175,9 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
             ))}
           </LdSelect>
           <LdInputMessage
-            className={title ? 'visible' : 'invisible'}
+            style={{
+              visibility: title ? undefined : 'hidden',
+            }}
             mode="valid"
           >
             Good pick.
@@ -198,9 +206,10 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
             invalid={!!errors.name}
           />
           <LdInputMessage
-            className={
-              errors.name ?? getValues('name') ? 'visible' : 'invisible'
-            }
+            style={{
+              visibility:
+                errors.name ?? getValues('name') ? undefined : 'hidden',
+            }}
             mode={errors.name ? 'error' : 'valid'}
           >
             {errors.name
@@ -235,9 +244,10 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
             invalid={!!errors.email}
           />
           <LdInputMessage
-            className={
-              errors.email ?? getValues('email') ? 'visible' : 'invisible'
-            }
+            style={{
+              visibility:
+                errors.email ?? getValues('email') ? undefined : 'hidden',
+            }}
             mode={errors.email ? 'error' : 'valid'}
           >
             {errors.email?.type === 'required'
@@ -274,9 +284,10 @@ const Form: React.FC<FormProps> = ({ onChangeTheme }) => {
             invalid={!!errors.website}
           />
           <LdInputMessage
-            className={
-              errors.website ?? getValues('website') ? 'visible' : 'invisible'
-            }
+            style={{
+              visibility:
+                errors.website ?? getValues('website') ? undefined : 'hidden',
+            }}
             mode={errors.website ? 'error' : 'valid'}
           >
             {errors.website
