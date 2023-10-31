@@ -4,7 +4,8 @@
 // We use Liquid Oxygen Web Components with React bindings here.
 // See https://liquid.merck.design/liquid/guides/server-side-rendering/#react-server-components
 
-import Form from '../components/Form/Form'
+import Form from '@/components/Form/Form'
+import Chart from '@/components/Chart/Chart'
 import {
   LdBgCells,
   LdNotification,
@@ -66,6 +67,7 @@ const Home: NextPage = () => {
         <LdTypo variant="b1" className="text-thm-warning mb-ld-40">
           Liquid Sandbox App
         </LdTypo>
+        <Chart />
         <Form onChangeTheme={handleChangeTheme} />
       </div>
     </>
